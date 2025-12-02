@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirsad Insights | Intelligence-as-a-Service</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter (Headings) and Open Sans (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mirsad: {
+                            navy: '#15293E', // Primary
+                            blue: '#5C87A4', // Secondary/Accent
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Map Pulse Animation */
+        .pulse-dot {
+            box-shadow: 0 0 0 0 rgba(92, 135, 164, 0.7);
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(92, 135, 164, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(92, 135, 164, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(92, 135, 164, 0);
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased selection:bg-mirsad-blue selection:text-white">
+
+    <!-- Navigation (Simple) -->
+    <nav class="absolute top-0 w-full z-20 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-white font-display font-bold text-2xl tracking-wide">
+                MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO & CAPTURE -->
+    <header class="relative bg-mirsad-navy min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden">
+        
+        <!-- Abstract Background Decoration -->
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#5C87A4" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-4.9C93.5,9.4,82.2,23.1,71.2,35.1C60.2,47.1,49.5,57.4,37.3,64.7C25.1,72,11.4,76.3,-1.8,79.4C-15,82.5,-28.4,84.4,-40.4,78.8C-52.4,73.2,-63,60.1,-71.4,46.1C-79.8,32.1,-86,17.2,-84.9,2.8C-83.8,-11.6,-75.4,-25.5,-65.4,-37.2C-55.4,-48.9,-43.8,-58.4,-31.6,-66.6C-19.4,-74.8,-6.6,-81.7,7.1,-94L20.8,-106.3L44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="text-white max-w-2xl">
+                <div class="inline-block px-3 py-1 mb-4 border border-mirsad-blue/30 rounded-full bg-mirsad-blue/10 text-mirsad-blue text-xs font-semibold tracking-wider uppercase">
+                    Intelligence-as-a-Service
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
+                    Turn Market Noise Into <span class="text-mirsad-blue">Clear Strategy.</span>
+                </h1>
+                <h2 class="text-lg md:text-xl text-gray-300 font-light mb-8 leading-relaxed max-w-lg">
+                    The only intelligence agency in MENA that combines AI Intelligence with expert human analysis. We watch the market so you can lead it.
+                </h2>
+                <div class="flex items-center space-x-4 text-sm text-gray-400">
+                    <span class="flex items-center"><i class="fas fa-check-circle text-mirsad-blue mr-2"></i> MENA Specialized</span>
+                    <span class="flex items-center"><i class="fas fa-check-circle text-mirsad-blue mr-2"></i> 24/7 Monitoring</span>
+                </div>
+            </div>
+
+            <!-- The Simple Contact Box (CTA) -->
+            <div class="w-full max-w-md mx-auto lg:ml-auto bg-white rounded-lg shadow-2xl p-8 relative transform transition hover:-translate-y-1 duration-300">
+                <div class="absolute -top-3 -right-3 bg-mirsad-blue text-white text-xs font-bold px-3 py-1 rounded shadow-lg uppercase tracking-wide">
+                    Priority Access
+                </div>
+                
+                <h3 class="text-mirsad-navy font-display font-bold text-xl mb-2">Start Your Intelligence Briefing</h3>
+                <p class="text-gray-500 text-sm mb-6">Request a consultation and receive our free <strong>MENA Digital Risk Checklist</strong>.</p>
+
+                <form id="heroForm" class="space-y-4" onsubmit="handleFormSubmit(event, 'hero')">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="fname" class="block text-xs font-semibold text-gray-600 mb-1">First Name</label>
+                            <input type="text" id="fname" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-mirsad-blue focus:ring-1 focus:ring-mirsad-blue transition" placeholder="Ali">
+                        </div>
+                        <div>
+                            <label for="lname" class="block text-xs font-semibold text-gray-600 mb-1">Last Name</label>
+                            <input type="text" id="lname" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-mirsad-blue focus:ring-1 focus:ring-mirsad-blue transition" placeholder="Hassan">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs font-semibold text-gray-600 mb-1">Business Email</label>
+                        <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-mirsad-blue focus:ring-1 focus:ring-mirsad-blue transition" placeholder="name@company.com">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-mirsad-navy text-white font-bold py-3 px-4 rounded hover:bg-opacity-90 transition duration-300 flex items-center justify-center">
+                        <span>Connect with Mirsad</span>
+                        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </button>
+                    
+                    <p class="text-xs text-gray-400 text-center mt-2">
+                        <i class="fas fa-lock mr-1"></i> Your data is strictly confidential.
+                    </p>
+                </form>
+
+                <!-- Success Message Overlay (Hidden by default) -->
+                <div id="heroSuccess" class="hidden absolute inset-0 bg-white rounded-lg flex-col items-center justify-center text-center p-8 z-20">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-check text-2xl text-green-600"></i>
+                    </div>
+                    <h4 class="text-mirsad-navy font-bold text-lg mb-2">Request Received</h4>
+                    <p class="text-gray-600 text-sm">Thank you. Your request has been sent to our Intelligence Unit. Check your inbox shortly.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom wave decoration -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[50px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- SECTION 2: THE DASHBOARD (COMMAND CENTER) -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-display font-bold text-mirsad-navy mb-4">The Mirsad Command Center</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Stop guessing. See your Reputation, Sentiment, and CX Performance in one unified view.
+                </p>
+            </div>
+
+            <!-- DASHBOARD CONTAINER -->
+            <div class="max-w-5xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl shadow-2xl overflow-hidden relative">
+                <!-- Mac-style Window Header -->
+                <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    <div class="ml-4 text-xs text-gray-400 font-mono">dashboard.mirsadinsights.com/executive-view</div>
+                </div>
+
+                <!-- Dashboard Content Grid -->
+                <div class="grid md:grid-cols-4 bg-gray-50 min-h-[500px]">
+                    
+                    <!-- Sidebar Navigation -->
+                    <div class="hidden md:block col-span-1 bg-mirsad-navy text-gray-400 p-4 border-r border-gray-800">
+                        <div class="text-white font-bold text-sm tracking-widest mb-8">Mirsad Intelligence</div>
+                        <ul class="space-y-4 text-sm">
+                            <li class="text-white flex items-center gap-3 bg-white/10 p-2 rounded"><i class="fas fa-chart-pie w-4"></i> Overview</li>
+                            <li class="hover:text-white flex items-center gap-3 p-2 transition cursor-pointer"><i class="fas fa-globe w-4"></i> Listening</li>
+                            <li class="hover:text-white flex items-center gap-3 p-2 transition cursor-pointer"><i class="fas fa-robot w-4"></i> Automation</li>
+                            <li class="hover:text-white flex items-center gap-3 p-2 transition cursor-pointer"><i class="fas fa-file-alt w-4"></i> Reports</li>
+                            <li class="hover:text-white flex items-center gap-3 p-2 transition cursor-pointer"><i class="fas fa-cog w-4"></i> Settings</li>
+                        </ul>
+                    </div>
+
+                    <!-- Main Dashboard Area -->
+                    <div class="col-span-4 md:col-span-3 p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Card 1: Brand Health Index (BHI) -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center relative overflow-hidden h-full">
+                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide w-full mb-4 text-center">Brand Health Index (BHI)</h4>
+                            <!-- CSS Gauge -->
+                            <div class="relative w-32 h-32">
+                                <div class="w-full h-full rounded-full border-[12px] border-gray-100"></div>
+                                <!-- Green Healthy Gauge -->
+                                <div class="absolute top-0 left-0 w-full h-full rounded-full border-[12px] border-green-500 border-t-transparent border-l-transparent transform -rotate-12" style="border-right-color: #22c55e; border-bottom-color: #22c55e;"></div>
+                                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                    <span class="text-3xl font-bold text-green-600">9.2</span>
+                                    <span class="text-[10px] text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded-full">Healthy</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-center text-gray-400 mt-4">Top 5% of Industry Peers</p>
+                        </div>
+
+                        <!-- Card 2: Market Sentiment (Simplified) -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide">Market Sentiment</h4>
+                                <span class="text-xs text-mirsad-blue bg-blue-50 px-2 py-1 rounded">24h</span>
+                            </div>
+                            
+                            <div class="space-y-4 my-auto">
+                                <!-- Positive -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-600">Positive</span>
+                                        <span class="font-bold text-green-600">45%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-100 rounded-full h-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <!-- Neutral -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-600">Neutral</span>
+                                        <span class="font-bold text-gray-600">30%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-100 rounded-full h-2">
+                                        <div class="bg-gray-400 h-2 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <!-- Negative -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="text-gray-600">Negative</span>
+                                        <span class="font-bold text-red-600">25%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-100 rounded-full h-2">
+                                        <div class="bg-red-500 h-2 rounded-full" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Share of Voice (New Separate Box) -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide">Share of Voice</h4>
+                                <span class="text-xs text-mirsad-blue bg-blue-50 px-2 py-1 rounded">Sources</span>
+                            </div>
+
+                            <div class="flex items-end justify-between h-32 gap-2 text-[10px] text-gray-500 w-full mt-auto">
+                                <!-- Facebook -->
+                                <div class="flex flex-col items-center gap-1 flex-1 h-full justify-end group">
+                                    <span class="font-bold text-mirsad-navy mb-1">35%</span>
+                                    <div class="w-full bg-blue-100 rounded-t relative hover:bg-blue-200 transition-colors" style="height: 35%;">
+                                        <div class="absolute bottom-0 w-full bg-blue-600 rounded-t" style="height: 100%"></div>
+                                    </div>
+                                    <span class="font-semibold">FB</span>
+                                </div>
+                                <!-- Instagram -->
+                                <div class="flex flex-col items-center gap-1 flex-1 h-full justify-end group">
+                                     <span class="font-bold text-mirsad-navy mb-1">42%</span>
+                                    <div class="w-full bg-pink-100 rounded-t relative hover:bg-pink-200 transition-colors" style="height: 42%;">
+                                        <div class="absolute bottom-0 w-full bg-gradient-to-t from-orange-400 to-pink-500 rounded-t" style="height: 100%"></div>
+                                    </div>
+                                    <span class="font-semibold">IG</span>
+                                </div>
+                                <!-- X (Twitter) -->
+                                <div class="flex flex-col items-center gap-1 flex-1 h-full justify-end group">
+                                     <span class="font-bold text-mirsad-navy mb-1">15%</span>
+                                    <div class="w-full bg-gray-200 rounded-t relative hover:bg-gray-300 transition-colors" style="height: 15%;">
+                                        <div class="absolute bottom-0 w-full bg-black rounded-t" style="height: 100%"></div>
+                                    </div>
+                                    <span class="font-semibold">X</span>
+                                </div>
+                                <!-- Web -->
+                                <div class="flex flex-col items-center gap-1 flex-1 h-full justify-end group">
+                                     <span class="font-bold text-mirsad-navy mb-1">8%</span>
+                                    <div class="w-full bg-gray-100 rounded-t relative hover:bg-gray-200 transition-colors" style="height: 8%;">
+                                        <div class="absolute bottom-0 w-full bg-gray-500 rounded-t" style="height: 100%"></div>
+                                    </div>
+                                    <span class="font-semibold">Web</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Chatbot FAQ Inquiries (Line/List) -->
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 col-span-1 lg:col-span-3">
+                            <div class="flex justify-between items-center mb-4">
+                                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wide">Top Automated Inquiries (CX)</h4>
+                                <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded"><i class="fas fa-robot mr-1"></i> 94% Auto-Resolved</span>
+                            </div>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-400 uppercase bg-gray-50">
+                                        <tr>
+                                            <th class="px-3 py-2">Query Topic</th>
+                                            <th class="px-3 py-2">Volume</th>
+                                            <th class="px-3 py-2">Trend</th>
+                                            <th class="px-3 py-2 text-right">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        <tr>
+                                            <td class="px-3 py-3 font-medium text-gray-800">Pricing Tiers</td>
+                                            <td class="px-3 py-3">1,204</td>
+                                            <td class="px-3 py-3 text-green-500">▲ 12%</td>
+                                            <td class="px-3 py-3 text-right"><span class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Resolved</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-3 py-3 font-medium text-gray-800">Service Outage (West Amman)</td>
+                                            <td class="px-3 py-3">856</td>
+                                            <td class="px-3 py-3 text-red-500">▼ 5%</td>
+                                            <td class="px-3 py-3 text-right"><span class="bg-yellow-100 text-yellow-600 px-2 py-1 rounded text-xs">Escalated</span></td>
+                                        </tr>
+                                         <tr>
+                                            <td class="px-3 py-3 font-medium text-gray-800">Account Access</td>
+                                            <td class="px-3 py-3">432</td>
+                                            <td class="px-3 py-3 text-gray-400">- 0%</td>
+                                            <td class="px-3 py-3 text-right"><span class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Resolved</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE SOLUTION (DUAL ENGINE) -->
+    <section class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- Connecting Line Background (Desktop) -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200/60 -translate-y-1/2 z-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 bg-gray-50 relative z-20 inline-block w-full">
+                <span class="text-mirsad-blue font-bold tracking-wider text-sm uppercase">The Mirsad Methodology</span>
+                <h2 class="text-3xl font-display font-bold text-mirsad-navy mt-2">The Dual-Engine Model</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Technology detects volume. Humans detect nuance. See how our engines work together.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-11 gap-6 items-center">
+                
+                <!-- Engine 1: Platform Intelligence (The Machine) -->
+                <div class="md:col-span-5 relative group h-full">
+                    <!-- Decorative back layer -->
+                    <div class="absolute inset-0 bg-gray-200 rounded-2xl transform translate-x-2 translate-y-2 transition group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative z-10 h-full flex flex-col items-center text-center transition hover:-translate-y-1">
+                        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6 text-mirsad-navy shadow-inner">
+                            <i class="fas fa-server text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-mirsad-navy mb-1">Platform Intelligence</h3>
+                        <span class="text-sm font-bold text-mirsad-blue uppercase tracking-widest mb-6">The Machine</span>
+                        
+                        <p class="text-gray-600 leading-relaxed mb-8 text-sm">
+                            <strong>The Infrastructure.</strong> We deploy enterprise-grade listening tools and NLU automation to ingest millions of public data points, triage customer queries, and detect anomalies 24/7.
+                        </p>
+                        
+                        <!-- Output Label -->
+                        <div class="mt-auto w-full border-t border-gray-100 pt-4">
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1">Output</p>
+                            <div class="bg-gray-50 py-2 px-4 rounded text-sm font-bold text-mirsad-navy flex items-center justify-center gap-2">
+                                <i class="fas fa-database text-gray-400"></i> Raw Data & Alerts
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connector Arrow -->
+                <div class="md:col-span-1 flex justify-center py-4 md:py-0 relative z-20">
+                    <div class="w-14 h-14 bg-mirsad-blue rounded-full flex items-center justify-center text-white shadow-xl ring-4 ring-gray-50 animate-pulse">
+                        <i class="fas fa-arrow-right transform rotate-90 md:rotate-0 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Engine 2: Human Intelligence (The Analysis) -->
+                <div class="md:col-span-5 relative group h-full">
+                    <!-- Decorative back layer -->
+                    <div class="absolute inset-0 bg-mirsad-blue/20 rounded-2xl transform translate-x-2 translate-y-2 transition group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                    
+                    <div class="bg-mirsad-navy p-8 rounded-2xl shadow-xl border border-mirsad-navy relative z-10 h-full flex flex-col items-center text-center transition hover:-translate-y-1">
+                         <div class="w-20 h-20 bg-mirsad-blue rounded-full flex items-center justify-center mb-6 text-white shadow-lg">
+                            <i class="fas fa-brain text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-1">Human Intelligence</h3>
+                        <span class="text-sm font-bold text-mirsad-blue uppercase tracking-widest mb-6">The Analysis</span>
+                        
+                        <p class="text-gray-300 leading-relaxed mb-8 text-sm">
+                            <strong>The Filter.</strong> Our senior analysts take the machine's output to filter noise, verify intent, and interpret cultural nuance. We turn "What happened?" into "What to do next."
+                        </p>
+                        
+                        <!-- Output Label -->
+                         <div class="mt-auto w-full border-t border-white/10 pt-4">
+                            <p class="text-xs font-bold text-mirsad-blue uppercase tracking-wide mb-1">Result</p>
+                            <div class="bg-white/10 py-2 px-4 rounded text-sm font-bold text-white flex items-center justify-center gap-2">
+                                <i class="fas fa-check-circle text-mirsad-blue"></i> Strategic Certainty
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SERVICES -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-display font-bold text-mirsad-navy">Integrated Intelligence Solutions</h2>
+                <p class="mt-4 text-gray-600">Three ways we help you lead.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Brand Intelligence -->
+                <div class="group p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition duration-300 hover:shadow-xl cursor-default flex flex-col h-full">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-mirsad-blue mb-6 group-hover:bg-mirsad-blue group-hover:text-white transition shrink-0">
+                        <i class="fas fa-globe text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-mirsad-navy mb-4">Brand Intelligence</h3>
+                    <p class="text-gray-600 text-sm mb-4">Know what customers are saying before it trends. We map the market and identify growth opportunities.</p>
+                    <ul class="text-sm text-gray-500 space-y-3 mt-auto">
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Market & Trend Forecasting</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Competitive Intelligence</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Pre-Crisis Early Warning System (EWS)</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Product Gap Analysis</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Audience Research</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: CX Intelligence -->
+                <div class="group p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition duration-300 hover:shadow-xl cursor-default flex flex-col h-full">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-mirsad-blue mb-6 group-hover:bg-mirsad-blue group-hover:text-white transition shrink-0">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-mirsad-navy mb-4">CX Intelligence</h3>
+                    <p class="text-gray-600 text-sm mb-4">Chatbots and voice bots that actually solve customer problems, reducing costs and improving CX.</p>
+                    <ul class="text-sm text-gray-500 space-y-3 mt-auto">
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Omnichannel Automation</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Advanced NLU Engine</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Agile Bot Deployment</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Comprehensive CX Analytics</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Automated Testing</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Reputation Defense -->
+                <div class="group p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition duration-300 hover:shadow-xl cursor-default flex flex-col h-full">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-mirsad-blue mb-6 group-hover:bg-mirsad-blue group-hover:text-white transition shrink-0">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-mirsad-navy mb-4">Reputation Defense</h3>
+                    <p class="text-gray-600 text-sm mb-4">We protect your image during a crisis. Early warning systems and active engagement strategies.</p>
+                    <ul class="text-sm text-gray-500 space-y-3 mt-auto">
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Unified Contact Centre</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Rapid Response</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Crisis War Room</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Supervisor Panel</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-xs text-mirsad-blue mr-2 mt-1"></i> <span>Commercial Engagement</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: THE MENA ADVANTAGE (Dark) -->
+    <section class="py-24 bg-mirsad-navy text-white relative overflow-hidden">
+        <!-- Background Map Dots (Simulated) -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#5C87A4 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">We Speak Your Language.</h2>
+                <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                    Global tools fail at Arabic dialects. They can't tell the difference between a joke in Cairo and a complaint in Riyadh.
+                </p>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Mirsad specializes in the region. We ensure your data is culturally accurate, context-aware, and dialect-proof.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="px-4 py-2 border border-mirsad-blue rounded-full text-sm">Levantine</span>
+                    <span class="px-4 py-2 border border-mirsad-blue rounded-full text-sm">Khaleeji</span>
+                    <span class="px-4 py-2 border border-mirsad-blue rounded-full text-sm">Egyptian</span>
+                    <span class="px-4 py-2 border border-mirsad-blue rounded-full text-sm">Maghrebi</span>
+                </div>
+            </div>
+
+            <!-- Map Visualization -->
+            <div class="relative h-64 md:h-96 w-full flex items-center justify-center">
+                <!-- Abstract Map Graphic (CSS shapes) -->
+                <div class="w-full h-full border border-mirsad-blue/30 rounded-xl relative bg-mirsad-navy/50 backdrop-blur-sm p-4">
+                    <div class="absolute top-4 left-4 text-xs text-mirsad-blue font-mono">LIVE MONITORING // MENA REGION</div>
+                    
+                    <!-- Amman Dot -->
+                    <div class="absolute top-[30%] left-[40%] flex flex-col items-center">
+                        <div class="w-3 h-3 bg-mirsad-blue rounded-full pulse-dot"></div>
+                        <span class="text-[10px] mt-1 text-gray-400">Amman</span>
+                    </div>
+
+                    <!-- Riyadh Dot -->
+                    <div class="absolute top-[50%] left-[60%] flex flex-col items-center">
+                        <div class="w-3 h-3 bg-mirsad-blue rounded-full pulse-dot" style="animation-delay: 0.5s"></div>
+                        <span class="text-[10px] mt-1 text-gray-400">Riyadh</span>
+                    </div>
+
+                    <!-- Dubai Dot -->
+                    <div class="absolute top-[45%] left-[80%] flex flex-col items-center">
+                        <div class="w-3 h-3 bg-mirsad-blue rounded-full pulse-dot" style="animation-delay: 1s"></div>
+                        <span class="text-[10px] mt-1 text-gray-400">Dubai</span>
+                    </div>
+
+                    <!-- Cairo Dot -->
+                    <div class="absolute top-[40%] left-[25%] flex flex-col items-center">
+                        <div class="w-3 h-3 bg-mirsad-blue rounded-full pulse-dot" style="animation-delay: 1.5s"></div>
+                        <span class="text-[10px] mt-1 text-gray-400">Cairo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & REPEAT CTA -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="text-white font-display font-bold text-xl tracking-wide mb-4">
+                        MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
+                    </div>
+                    <p class="text-sm">Clarity From Complexity.</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Market Intelligence</a></li>
+                        <li><a href="#" class="hover:text-white transition">CX Automation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Risk Management</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Amman, Jordan</li>
+                        <li><a href="mailto:Iyad@MirsadInsights.com" class="hover:text-mirsad-blue transition">Iyad@MirsadInsights.com</a></li>
+                        <li>@MirsadInsights</li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-xs text-center">
+                &copy; 2025 Mirsad Insights. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Form Simulation -->
+    <script>
+        function handleFormSubmit(event, source) {
+            event.preventDefault();
+            
+            // Get form ID based on source
+            const formId = source === 'hero' ? 'heroForm' : 'footerForm';
+            const successId = source === 'hero' ? 'heroSuccess' : 'footerSuccess';
+            
+            const form = document.getElementById(formId);
+            const button = form.querySelector('button');
+            const originalBtnText = button.innerHTML;
+            
+            // Collect Data
+            const fname = source === 'hero' ? document.getElementById('fname').value : document.getElementById('footerName').value;
+            const email = source === 'hero' ? document.getElementById('email').value : document.getElementById('footerEmail').value;
+
+            // Simulate Loading
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            // Simulate Server Delay
+            setTimeout(() => {
+                // Success State
+                button.innerHTML = originalBtnText;
+                button.disabled = false;
+                
+                // Show Success Message
+                if(source === 'hero') {
+                    document.getElementById(successId).classList.remove('hidden');
+                    document.getElementById(successId).classList.add('flex');
+                } else {
+                    document.getElementById(successId).classList.remove('hidden');
+                }
+
+                // Log for Developer (In real world, this would be an API call)
+                console.log(`[SIMULATION] Email sent to: Iyad@MirsadInsights.com`);
+                console.log(`[DATA] Name: ${fname}, Email: ${email}, Source: ${source}`);
+                
+                // Clear form
+                form.reset();
+
+                // Hide success message after 5 seconds (for hero)
+                if(source === 'hero') {
+                    setTimeout(() => {
+                        document.getElementById(successId).classList.add('hidden');
+                        document.getElementById(successId).classList.remove('flex');
+                    }, 5000);
+                }
+
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
