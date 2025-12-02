@@ -113,7 +113,7 @@
                 <h3 class="text-mirsad-navy font-display font-bold text-xl mb-2">Start Your Intelligence Briefing</h3>
                 <p class="text-gray-500 text-sm mb-6">Request a consultation and receive our free <strong>MENA Digital Risk Checklist</strong>.</p>
 
-                <form id="heroForm" class="space-y-4" onsubmit="handleFormSubmit(event, 'hero')">
+                <form action="https://formspree.io/f/mgvgyyjb" method="POST" class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label for="fname" class="block text-xs font-semibold text-gray-600 mb-1">First Name</label>
@@ -580,58 +580,6 @@
         </div>
     </footer>
 
-    <!-- Script for Form Simulation -->
-    <script>
-        function handleFormSubmit(event, source) {
-            event.preventDefault();
-            
-            // Get form ID based on source
-            const formId = source === 'hero' ? 'heroForm' : 'footerForm';
-            const successId = source === 'hero' ? 'heroSuccess' : 'footerSuccess';
-            
-            const form = document.getElementById(formId);
-            const button = form.querySelector('button');
-            const originalBtnText = button.innerHTML;
-            
-            // Collect Data
-            const fname = source === 'hero' ? document.getElementById('fname').value : document.getElementById('footerName').value;
-            const email = source === 'hero' ? document.getElementById('email').value : document.getElementById('footerEmail').value;
 
-            // Simulate Loading
-            button.disabled = true;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-            // Simulate Server Delay
-            setTimeout(() => {
-                // Success State
-                button.innerHTML = originalBtnText;
-                button.disabled = false;
-                
-                // Show Success Message
-                if(source === 'hero') {
-                    document.getElementById(successId).classList.remove('hidden');
-                    document.getElementById(successId).classList.add('flex');
-                } else {
-                    document.getElementById(successId).classList.remove('hidden');
-                }
-
-                // Log for Developer (In real world, this would be an API call)
-                console.log(`[SIMULATION] Email sent to: Iyad@MirsadInsights.com`);
-                console.log(`[DATA] Name: ${fname}, Email: ${email}, Source: ${source}`);
-                
-                // Clear form
-                form.reset();
-
-                // Hide success message after 5 seconds (for hero)
-                if(source === 'hero') {
-                    setTimeout(() => {
-                        document.getElementById(successId).classList.add('hidden');
-                        document.getElementById(successId).classList.remove('flex');
-                    }, 5000);
-                }
-
-            }, 1500);
-        }
-    </script>
 </body>
 </html>
