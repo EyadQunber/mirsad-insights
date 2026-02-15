@@ -6,91 +6,109 @@
     <title>AI Automation & Bot Analytics | Mirsad Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } } } }
+            theme: {
+                extend: {
+                    colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] }
+                }
+            }
         }
     </script>
     <style>
         .typing-dot { animation: typing 1.4s infinite; }
         @keyframes typing { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
         .slide-in { animation: slideIn 0.5s ease-out forwards; opacity: 0; }
-        @keyframes slideIn { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(15px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-white text-gray-900 selection:bg-mirsad-blue selection:text-white">
 
-    <nav class="p-6 bg-mirsad-navy text-white flex justify-between items-center border-b border-white/5">
-        <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
-        <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-mirsad-navy transition">← Back to Overview</a>
+    <nav class="fixed top-0 w-full z-50 bg-mirsad-navy/95 backdrop-blur-md h-20 border-b border-white/5">
+        <div class="container mx-auto px-6 h-full flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="flex items-center">
+                <div class="text-white font-display font-bold text-xl tracking-tighter uppercase">
+                    MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="social-intelligence.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Social</a>
+                <a href="reputation-defense.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Reputation</a>
+                <a href="ai-automation.html" class="text-[10px] font-bold text-mirsad-blue uppercase tracking-widest">AI Automation</a>
+            </div>
+            <a href="index.html#contact" class="bg-mirsad-blue text-white text-[10px] font-bold py-2.5 px-6 rounded-full hover:bg-white hover:text-mirsad-navy transition duration-300 uppercase tracking-widest">
+                Alignment Session
+            </a>
+        </div>
     </nav>
 
-    <header class="py-24 bg-white text-mirsad-navy">
-        <div class="container mx-auto px-6">
+    <header class="pt-48 pb-24 bg-mirsad-navy text-white">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="max-w-4xl">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-8">
                     <i class="fas fa-robot mr-2"></i> Scalable Defense Infrastructure
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-left">
-                    AI Automation <br> & Bot Analytics
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-8 leading-[1.1] text-left">
+                    AI Automation <br>& Bot Analytics
                 </h1>
-                <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed text-left font-light">
-                    Transforming customer service from a cost center into a strategic defense layer. We deploy advanced NLU infrastructure to act as your "Digital First Responder." [cite: 79-80, 82]
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-left italic">
+                    Transforming customer service into a strategic defense layer. We deploy "Digital First Responders" that resolve inquiries while securing your brand voice.
                 </p>
             </div>
         </div>
     </header>
 
-    <section class="py-24 bg-mirsad-light">
-        <div class="container mx-auto px-6">
+    <section class="py-24 bg-mirsad-light border-b border-gray-200">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 
-                <div class="bg-mirsad-navy rounded-3xl shadow-2xl p-6 border border-white/10 relative overflow-hidden">
-                    <div class="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Bot Intelligence Console</span>
+                <div class="bg-mirsad-navy rounded-[40px] shadow-2xl p-8 md:p-12 border border-white/10 relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-10 border-b border-white/5 pb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_#ef4444]"></div>
+                            <span class="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">Bot Intelligence Console</span>
                         </div>
-                        <span class="text-[9px] text-mirsad-blue font-mono">LATENCY: 0.4ms</span>
+                        <span class="text-[9px] text-mirsad-blue font-mono font-bold">LATENCY: 0.4ms</span>
                     </div>
 
-                    <div class="space-y-4 font-mono text-[11px]">
+                    <div class="space-y-6 font-mono text-[11px] md:text-xs">
                         <div class="slide-in" style="animation-delay: 0.5s;">
-                            <div class="text-gray-500 mb-1">INCOMING_QUERY:</div>
-                            <div class="bg-white/5 p-3 rounded-lg text-gray-300 italic border-l-2 border-mirsad-blue">
+                            <div class="text-gray-500 mb-2 uppercase tracking-tighter">Query_Detected:</div>
+                            <div class="bg-white/5 p-4 rounded-xl text-gray-300 italic border-l-2 border-mirsad-blue">
                                 "How do I update my regional branding narrative?"
                             </div>
                         </div>
 
-                        <div class="slide-in flex items-center space-x-2 text-mirsad-blue" style="animation-delay: 1.5s;">
-                            <i class="fas fa-brain text-[10px]"></i>
-                            <span>ANALYZING_INTENT...</span>
+                        <div class="slide-in flex items-center space-x-3 text-mirsad-blue" style="animation-delay: 1.5s;">
+                            <i class="fas fa-brain"></i>
+                            <span class="font-bold">ANALYZING_INTENT_NLU...</span>
                             <span class="typing-dot">.</span><span class="typing-dot" style="animation-delay: 0.2s;">.</span><span class="typing-dot" style="animation-delay: 0.4s;">.</span>
                         </div>
 
                         <div class="slide-in" style="animation-delay: 2.5s;">
-                            <div class="text-green-500 mb-1">INTENT_MATCHED: [Strategic_Consult]</div>
-                            <div class="bg-mirsad-blue/20 p-3 rounded-lg text-white border-l-2 border-green-500">
-                                "I’ve detected you are asking about regional strategy. I am escalating this to the Lead Analyst for an Alignment Session."
+                            <div class="text-green-500 mb-2 uppercase tracking-tighter font-bold">Intent_Match: [Strategic_Inquiry]</div>
+                            <div class="bg-mirsad-blue/20 p-4 rounded-xl text-white border-l-2 border-green-500">
+                                "Analyzing regional context. Escalating to Lead Analyst for a 30-minute Alignment Session."
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <h2 class="text-3xl font-bold text-mirsad-navy mb-6">94% Accurate Intent Recognition.</h2>
-                    <p class="text-gray-600 mb-10 leading-relaxed italic">
-                        Our Natural Language Understanding (NLU) engine distinguishes between "confused users" and "hostile detractors," ensuring only genuine risks reach your human team. [cite: 85-86]
+                <div class="space-y-10">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-mirsad-navy leading-tight">94% Accurate Intent <br> Recognition.</h2>
+                    <p class="text-gray-500 leading-relaxed font-light text-lg italic">
+                        "Our NLU infrastructure distinguishes between localized dialects and hostile detractors, ensuring brand control in every interaction."
                     </p>
-                    
-                    <div class="grid grid-cols-2 gap-8">
-                        <div class="border-t border-gray-200 pt-6">
-                            <div class="text-3xl font-bold text-mirsad-blue mb-1">40%</div>
+                    <div class="grid grid-cols-2 gap-10">
+                        <div class="border-t-2 border-gray-100 pt-8">
+                            <div class="text-4xl font-display font-bold text-mirsad-blue mb-2">40%</div>
                             <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Instant Resolution</div>
                         </div>
-                        <div class="border-t border-gray-200 pt-6">
-                            <div class="text-3xl font-bold text-mirsad-blue mb-1">24/7</div>
-                            <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Crisis Monitoring</div>
+                        <div class="border-t-2 border-gray-100 pt-8">
+                            <div class="text-4xl font-display font-bold text-mirsad-blue mb-2">24/7</div>
+                            <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Active Monitoring</div>
                         </div>
                     </div>
                 </div>
@@ -100,36 +118,42 @@
     </section>
 
     <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="space-y-12">
-                    <div>
-                        <h4 class="text-mirsad-blue font-bold text-xs uppercase mb-3 tracking-widest">Integration</h4>
-                        <h3 class="text-lg font-bold text-mirsad-navy mb-2">Automated Engagement</h3>
-                        <p class="text-sm text-gray-500 font-light">Deploying bespoke, crisis-compliant conversation flows that protect brand voice. [cite: 83-84]</p>
-                    </div>
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
+                <div class="group">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">01 // Service Automation</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Enterprise Infrastructure</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Deploying high-capacity AI that resolves routine inquiries instantly while protecting brand reputation.</p>
                 </div>
-                <div class="space-y-12">
-                    <div>
-                        <h4 class="text-mirsad-blue font-bold text-xs uppercase mb-3 tracking-widest">Analysis</h4>
-                        <h3 class="text-lg font-bold text-mirsad-navy mb-2">Comprehensive Bot Analytics</h3>
-                        <p class="text-sm text-gray-500 font-light">Pinpointing root causes of customer frustration to fix failures before they become public crises. [cite: 87-88]</p>
-                    </div>
+                <div class="group">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">02 // Journey Mapping</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Strategic Conversation Flows</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Mapping bespoke, crisis-compliant journeys that solve specific challenges for PR and marketing teams.</p>
                 </div>
-                <div class="space-y-12">
-                    <div>
-                        <h4 class="text-mirsad-blue font-bold text-xs uppercase mb-3 tracking-widest">Strategy</h4>
-                        <h3 class="text-lg font-bold text-mirsad-navy mb-2">Customer Journey Mapping</h3>
-                        <p class="text-sm text-gray-500 font-light">Mapping tailored intelligence solutions that solve the specific challenges of every department. [cite: 50-51]</p>
-                    </div>
+                <div class="group">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">03 // NLU Training</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Dialect-Aware Intelligence</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Fine-tuning models to understand regional cultural nuances and distinguish intent with 94% accuracy.</p>
+                </div>
+                <div class="group">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">04 // Bot Analytics</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Operational Insights</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Pinpointing root causes of frustration to fix failures before they become public reputational crises.</p>
+                </div>
+                <div class="group">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">05 // Integrations</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Seamless Connectivity</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Connecting intelligence infrastructure to your existing tech stack for a unified data environment.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 bg-mirsad-navy text-center border-t border-white/5">
-        <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Request Logic Flow Demo</a>
-        <p class="text-[10px] text-gray-500 mt-12 uppercase tracking-widest italic font-mono tracking-tighter">© 2025 Mirsad Insights // Scalable Capacity. Secured Voice.</p>
+    <footer class="py-20 bg-mirsad-navy text-center border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Book Logic Flow Demo</a>
+            <p class="text-[9px] text-gray-500 mt-16 uppercase tracking-[0.3em] font-mono">© 2025 Mirsad Insights // Scalable Capacity. Secured Brand Voice.</p>
+        </div>
     </footer>
 
 </body>
