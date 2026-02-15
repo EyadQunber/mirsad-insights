@@ -6,9 +6,15 @@
     <title>Reputation Intelligence & Defense | Mirsad Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } } } }
+            theme: {
+                extend: {
+                    colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] }
+                }
+            }
         }
     </script>
     <style>
@@ -18,81 +24,98 @@
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-white text-gray-900 selection:bg-mirsad-blue selection:text-white">
 
-    <nav class="p-6 bg-mirsad-navy text-white flex justify-between items-center border-b border-white/5">
-        <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
-        <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-mirsad-navy transition">← Back to Overview</a>
+    <nav class="fixed top-0 w-full z-50 bg-mirsad-navy/95 backdrop-blur-md h-20 border-b border-white/5">
+        <div class="container mx-auto px-6 h-full flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="flex items-center">
+                <div class="text-white font-display font-bold text-xl tracking-tighter uppercase">
+                    MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="social-intelligence.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Social</a>
+                <a href="reputation-defense.html" class="text-[10px] font-bold text-mirsad-blue uppercase tracking-widest">Reputation</a>
+                <a href="ai-automation.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">AI Automation</a>
+            </div>
+            <a href="index.html#contact" class="bg-mirsad-blue text-white text-[10px] font-bold py-2.5 px-6 rounded-full hover:bg-white hover:text-mirsad-navy transition duration-300 uppercase tracking-widest">
+                Alignment Session
+            </a>
+        </div>
     </nav>
 
-    <header class="py-24 bg-mirsad-navy text-white">
-        <div class="container mx-auto px-6">
+    <header class="pt-48 pb-24 bg-mirsad-navy text-white">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="max-w-4xl">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-8">
                     <i class="fas fa-shield-halved pulse-secure mr-2"></i> Active Narrative Defense
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Reputation Intelligence <br> & Defense
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-8 leading-[1.1] text-left">
+                    Reputation Intelligence <br>& Defense
                 </h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-                    Moving from reactive cleanup to proactive narrative control. We secure your digital brand health through real-time sentiment neutralization.
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-left italic">
+                    Moving from reactive management to proactive protection. We act as the guardians of your digital reputation, neutralizing negativity and securing brand health.
                 </p>
             </div>
         </div>
     </header>
 
-    <section class="py-24 bg-mirsad-light">
-        <div class="container mx-auto px-6">
+    <section class="py-24 bg-mirsad-light border-b border-gray-200">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 
-                <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-200">
-                    <div class="flex justify-between items-center mb-10">
-                        <h3 class="text-xs font-bold text-mirsad-navy uppercase tracking-widest">Brand Health Index (BHI)</h3>
-                        <span class="text-[10px] font-mono text-green-600 bg-green-50 px-2 py-1 rounded">SECURE</span>
+                <div class="bg-white rounded-[40px] shadow-2xl p-10 md:p-16 border border-gray-200">
+                    <div class="flex justify-between items-center mb-12">
+                        <h3 class="text-[10px] font-bold text-mirsad-navy uppercase tracking-[0.2em]">Brand Health Index (BHI)</h3>
+                        <span class="text-[10px] font-mono text-green-600 bg-green-50 px-3 py-1 rounded-full font-bold">PROTOCOL_SECURE</span>
                     </div>
                     
                     <div class="relative w-64 h-32 mx-auto overflow-hidden">
                         <div class="absolute top-0 w-64 h-64 border-[24px] border-gray-100 rounded-full"></div>
                         <div class="absolute top-0 w-64 h-64 border-[24px] border-transparent border-t-green-500 border-r-green-500 rounded-full transform -rotate-45"></div>
-                        <div class="absolute bottom-0 left-1/2 w-1 h-24 bg-mirsad-navy gauge-arrow -translate-x-1/2"></div>
-                        <div class="absolute bottom-0 left-1/2 w-4 h-4 bg-mirsad-navy rounded-full -translate-x-1/2 translate-y-1/2"></div>
+                        <div class="absolute bottom-0 left-1/2 w-1.5 h-24 bg-mirsad-navy gauge-arrow -translate-x-1/2 rounded-full"></div>
+                        <div class="absolute bottom-0 left-1/2 w-5 h-5 bg-mirsad-navy rounded-full -translate-x-1/2 translate-y-1/2"></div>
                     </div>
                     
-                    <div class="text-center mt-6">
-                        <div class="text-4xl font-bold text-mirsad-navy">0.99</div>
-                        <div class="text-[10px] text-gray-400 uppercase tracking-tighter mt-1">Net Sentiment Accuracy</div>
+                    <div class="text-center mt-10">
+                        <div class="text-5xl font-display font-bold text-mirsad-navy">0.99</div>
+                        <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-2 font-bold">Net Sentiment Accuracy</div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4 mt-12 border-t border-gray-100 pt-8">
-                        <div class="text-left">
-                            <div class="text-xs font-bold text-gray-400 mb-1">Neutralized Threats</div>
-                            <div class="text-xl font-bold text-mirsad-navy">1,432</div>
+                    <div class="grid grid-cols-2 gap-8 mt-16 pt-8 border-t border-gray-100">
+                        <div>
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">Neutralized Threats</div>
+                            <div class="text-2xl font-display font-bold text-mirsad-navy italic">1,432</div>
                         </div>
-                        <div class="text-left">
-                            <div class="text-xs font-bold text-gray-400 mb-1">Response Latency</div>
-                            <div class="text-xl font-bold text-mirsad-navy">1.2m</div>
+                        <div>
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">Response Latency</div>
+                            <div class="text-2xl font-display font-bold text-mirsad-navy italic">1.2m</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-8">
-                    <h2 class="text-3xl font-bold text-mirsad-navy leading-snug">Distinguish Noise <br> from Genuine Risk.</h2>
-                    <p class="text-gray-600 leading-relaxed italic">
-                        "Global tools fail at Arabic dialects. They can't tell the difference between a joke in Cairo and a complaint in Riyadh."
+                <div class="space-y-10">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-mirsad-navy leading-tight">Securing the Mission through <br> Sentiment Neutralization.</h2>
+                    <p class="text-gray-500 leading-relaxed font-light text-lg">
+                        Global tools fail at regional nuance. Our protocol distinguishes between localized dialect humor and genuine reputational risk, ensuring your defense is always calibrated.
                     </p>
-                    <div class="space-y-6">
+                    <div class="space-y-8">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded bg-mirsad-navy flex items-center justify-center text-white mr-4 shrink-0 shadow-lg">01</div>
+                            <div class="w-12 h-12 rounded-xl bg-mirsad-navy flex items-center justify-center text-white mr-5 shrink-0 shadow-xl">
+                                <i class="fas fa-check-double"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-mirsad-navy">Digital Brand Health Tracking</h4>
-                                <p class="text-sm text-gray-500">24/7 monitoring of public emotion to provide a unified health score.</p>
+                                <h4 class="font-display font-bold text-mirsad-navy text-lg">Human-Verified Analysis</h4>
+                                <p class="text-sm text-gray-500">Senior analysts decode the data that AI misses, providing strategic certainty for leadership decisions.</p>
                             </div>
                         </div>
-                        <div class="flex items-start border-t border-gray-200 pt-6">
-                            <div class="w-10 h-10 rounded bg-mirsad-blue flex items-center justify-center text-white mr-4 shrink-0 shadow-lg">02</div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-xl bg-mirsad-blue flex items-center justify-center text-white mr-5 shrink-0 shadow-xl">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-mirsad-navy">Sentiment Neutralization</h4>
-                                <p class="text-sm text-gray-500">Deploying strategic community engagement to secure your image during a crisis.</p>
+                                <h4 class="font-display font-bold text-mirsad-navy text-lg">Active Risk Mitigation</h4>
+                                <p class="text-sm text-gray-500">Neutralizing hostile narratives across platforms before they gain viral momentum.</p>
                             </div>
                         </div>
                     </div>
@@ -103,35 +126,37 @@
     </section>
 
     <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div class="space-y-12">
-                    <div class="border-l-4 border-red-500 pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy uppercase tracking-tighter">Community & Crisis Management</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light italic">Active line of protection managing community interactions to secure reputation.</p>
-                    </div>
-                    <div class="border-l-4 border-mirsad-blue pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy uppercase tracking-tighter">Narrative Control</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light italic">Identifying reputational threats the moment they surface through proprietary risk alerts.</p>
-                    </div>
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid md:grid-cols-2 gap-y-20 gap-x-16">
+                <div class="group border-l-4 border-red-500 pl-8 py-2">
+                    <div class="text-red-500 text-[10px] font-bold mb-4 tracking-widest uppercase">Community & Crisis</div>
+                    <h3 class="font-display font-bold text-2xl text-mirsad-navy mb-4 group-hover:text-red-500 transition uppercase tracking-tighter">Crisis Management</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light italic">Managing sensitive interactions to ensure your brand's narrative remains uncompromised during high-pressure cycles.</p>
                 </div>
-                <div class="space-y-12">
-                    <div class="border-l-4 border-mirsad-navy pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy uppercase tracking-tighter">Digital Brand Health Score</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light italic">Analyzing public emotion to distinguish between temporary noise and genuine risk.</p>
-                    </div>
-                    <div class="border-l-4 border-green-500 pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy uppercase tracking-tighter">Reputation Protection</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light italic">Synchronized divisions acting as guardians of your digital reputation.</p>
-                    </div>
+                <div class="group border-l-4 border-mirsad-blue pl-8 py-2">
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">Narrative Identification</div>
+                    <h3 class="font-display font-bold text-2xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition uppercase tracking-tighter">Narrative Control</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light italic">Proprietary risk alerts that allow leadership to identify and address emerging threats the moment they surface.</p>
+                </div>
+                <div class="group border-l-4 border-mirsad-navy pl-8 py-2">
+                    <div class="text-mirsad-navy text-[10px] font-bold mb-4 tracking-widest uppercase">Brand Health Score</div>
+                    <h3 class="font-display font-bold text-2xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition uppercase tracking-tighter">Digital Health Tracking</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light italic">Analyzing public emotion to distinguish between temporary digital noise and genuine reputational risk.</p>
+                </div>
+                <div class="group border-l-4 border-green-500 pl-8 py-2">
+                    <div class="text-green-500 text-[10px] font-bold mb-4 tracking-widest uppercase">Sentiment Protection</div>
+                    <h3 class="font-display font-bold text-2xl text-mirsad-navy mb-4 group-hover:text-green-500 transition uppercase tracking-tighter">Sentiment Neutralization</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light italic">Directly neutralizing negative sentiment to shift public conversation back to core brand values.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 bg-mirsad-navy text-center border-t border-white/5">
-        <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Secure Reputation Audit</a>
-        <p class="text-[10px] text-gray-500 mt-12 uppercase tracking-widest italic font-mono tracking-tighter">© 2025 Mirsad Insights // Intellectual Property Enforced by Alhababi Law Firm.</p>
+    <footer class="py-20 bg-mirsad-navy text-center">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Secure Reputation Audit</a>
+            <p class="text-[9px] text-gray-500 mt-16 uppercase tracking-[0.3em] font-mono">© 2025 Mirsad Insights // Intellectual Property Enforced by Alhababi Law Firm.</p>
+        </div>
     </footer>
 
 </body>
