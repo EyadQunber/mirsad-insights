@@ -12,26 +12,30 @@
         }
     </script>
     <style>
-        .dashboard-img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .radar-line { animation: rotate 4s linear infinite; transform-origin: center; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .data-dot { animation: blink 2s infinite; opacity: 0; }
+        @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
     </style>
 </head>
-<body class="bg-white text-gray-900 selection:bg-mirsad-blue selection:text-white overflow-x-hidden">
+<body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <nav class="p-6 bg-mirsad-navy text-white border-b border-white/5">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
-            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-mirsad-navy transition">← Back to Overview</a>
-        </div>
+    <nav class="p-6 bg-mirsad-navy text-white flex justify-between items-center border-b border-white/5">
+        <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
+        <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-mirsad-navy transition">← Back to Overview</a>
     </nav>
 
     <header class="py-24 bg-mirsad-navy text-white">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-6">
+                    <i class="fas fa-satellite-dish mr-2"></i> Phase 01: The Radar
+                </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-left">
                     Social Intelligence <br> & Analytics
                 </h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed text-left">
-                    [cite_start]The Radar: 24/7 AI-scanning of the global web to turn raw conversations into executive intelligence [cite: 140-141, 147].
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed text-left font-light italic">
+                    Capturing millions of real-time conversations to ensure your agency detects every emerging trend and reputational threat. [cite: 9, 13]
                 </p>
             </div>
         </div>
@@ -39,76 +43,77 @@
 
     <section class="py-24 bg-mirsad-light">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold text-mirsad-blue uppercase tracking-widest mb-3">The Intelligence Suite</h2>
-                <p class="text-3xl font-bold text-mirsad-navy">Actionable Data Visualization</p>
-            </div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="bg-black rounded-3xl shadow-2xl p-8 border border-white/10 relative overflow-hidden aspect-square flex items-center justify-center">
+                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#5C87A4 1px, transparent 1px); background-size: 40px 40px;"></div>
+                    
+                    <div class="relative w-64 h-64 border border-mirsad-blue/30 rounded-full flex items-center justify-center">
+                        <div class="w-48 h-48 border border-mirsad-blue/20 rounded-full"></div>
+                        <div class="w-32 h-32 border border-mirsad-blue/10 rounded-full"></div>
+                        
+                        <div class="absolute inset-0 radar-line">
+                            <div class="w-1/2 h-0.5 bg-gradient-to-r from-transparent to-mirsad-blue shadow-[0_0_15px_rgba(92,135,164,0.8)]"></div>
+                        </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
-                <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="bg-gray-50 p-4 border-b border-gray-200 flex justify-between items-center">
-                        <span class="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest text-xs">Radar Feed // Live Mentions</span>
-                        <div class="flex space-x-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                        <div class="absolute top-10 left-20 data-dot h-2 w-2 bg-green-400 rounded-full shadow-[0_0_10px_#4ade80]"></div>
+                        <div class="absolute bottom-20 right-10 data-dot h-2 w-2 bg-red-400 rounded-full shadow-[0_0_10px_#f87171]" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute top-1/2 right-1/4 data-dot h-2 w-2 bg-mirsad-blue rounded-full shadow-[0_0_10px_#5C87A4]" style="animation-delay: 1.2s;"></div>
+                    </div>
+
+                    <div class="absolute bottom-6 left-6 text-[9px] font-mono text-mirsad-blue tracking-tighter uppercase">
+                        Scanning_Web_Conversations... <br> 
+                        <span class="text-gray-500 italic">Target: MENA_Region // Accuracy: 94%</span>
+                    </div>
+                </div>
+
+                <div class="space-y-10">
+                    <h2 class="text-3xl font-bold text-mirsad-navy leading-snug">Turn Market Noise into <br> Deployment-Ready Insights.</h2>
+                    
+                    <div class="grid gap-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-microchip text-mirsad-blue mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-mirsad-navy">Market Research & Insights</h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Deep-dive consumer behavior mapping and cultural insight extraction to validate your campaigns. [cite: 71, 73]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start border-t border-gray-200 pt-8">
+                            <i class="fas fa-chart-line text-mirsad-blue mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-mirsad-navy">Competitive Benchmarking</h4>
+                                <p class="text-sm text-gray-500 leading-relaxed">Benchmarking performance against regional peers to uncover white space and market gaps. [cite: 31, 72]</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-gray-100">
-                         <img src="./image_e44f4b.jpg" class="dashboard-img" alt="Real-Time Mentions Feed">
-                    </div>
-                    <div class="p-8 bg-mirsad-navy text-white">
-                        <h4 class="font-bold text-lg mb-2">Real-Time Pulse</h4>
-                        [cite_start]<p class="text-sm text-gray-400 italic leading-relaxed">Capturing millions of conversations across Facebook, X, and Web news to identify emerging threats instantly [cite: 116-117, 132].</p>
-                    </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="bg-gray-50 p-4 border-b border-gray-200 flex justify-between items-center">
-                        <span class="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest text-xs">Analytics Suite // Geolocation</span>
-                    </div>
-                    <div class="bg-gray-100">
-                        <img src="./image_e44f87.jpg" class="dashboard-img" alt="Regional Geolocation Mapping">
-                    </div>
-                    <div class="p-8 bg-mirsad-navy text-white">
-                        <h4 class="font-bold text-lg mb-2">Regional Sentiment Mapping</h4>
-                        [cite_start]<p class="text-sm text-gray-400 italic leading-relaxed">Distinguishing between regional dialects to provide contextually accurate brand health tracking across MENA[cite: 121, 128, 133].</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition shadow-sm">
+                    <h3 class="font-bold text-mirsad-navy mb-4 uppercase text-xs tracking-widest italic">Monitoring</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Real-time tracking of every mention, rumor, and news story across the global web. [cite: 28, 43]</p>
+                </div>
+                <div class="p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition shadow-sm">
+                    <h3 class="font-bold text-mirsad-navy mb-4 uppercase text-xs tracking-widest italic">Validation</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Continuous campaign tracking and reaction analysis to ensure narrative integrity. [cite: 54, 60]</p>
+                </div>
+                <div class="p-8 border border-gray-100 rounded-2xl hover:border-mirsad-blue transition shadow-sm">
+                    <h3 class="font-bold text-mirsad-navy mb-4 uppercase text-xs tracking-widest italic">Amplification</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Identifying key demographics and regional influencers to amplify your message. [cite: 30, 56]</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div class="space-y-12">
-                    <div class="border-l-4 border-mirsad-blue pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy">Market Research & Insights</h3>
-                        [cite_start]<p class="text-gray-500 text-sm leading-relaxed">Deep-dive analysis into consumer behavior mapping and cultural insights to distinguish between noise and genuine risk [cite: 114, 129, 174-177].</p>
-                    </div>
-                    <div class="border-l-4 border-mirsad-blue pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy">Social & Media Monitoring</h3>
-                        [cite_start]<p class="text-gray-500 text-sm leading-relaxed">Real-time tracking of every mention, rumor, and news story across the global web[cite: 127, 132, 147].</p>
-                    </div>
-                </div>
-                <div class="space-y-12">
-                    <div class="border-l-4 border-mirsad-blue pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy">Campaign Tracking</h3>
-                        [cite_start]<p class="text-gray-500 text-sm leading-relaxed">Live data streams to validate your campaigns and strengthen your pitches through deployment-ready metrics[cite: 119, 164].</p>
-                    </div>
-                    <div class="border-l-4 border-mirsad-blue pl-6 py-2">
-                        <h3 class="text-xl font-bold mb-3 text-mirsad-navy">Influencer Identification</h3>
-                        [cite_start]<p class="text-gray-500 text-sm leading-relaxed">Identifying key demographics and regional influencers to amplify your message to the right people[cite: 130, 134, 160, 165].</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-16 bg-mirsad-navy text-center">
-        <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg">SECURE ALIGNMENT SESSION</a>
-        <p class="text-[10px] text-gray-500 mt-12 uppercase tracking-widest italic">© 2025 Mirsad Insights. [cite_start]Intellectual Property Enforced by Alhababi Law Firm[cite: 108].</p>
+    <footer class="py-16 bg-mirsad-navy text-center border-t border-white/5">
+        <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Request Intelligence Briefing</a>
+        <p class="text-[10px] text-gray-500 mt-12 uppercase tracking-widest italic font-mono tracking-tighter">© 2025 Mirsad Insights // Strategy Powered by Data-Driven Metrics.</p>
     </footer>
 
 </body>
