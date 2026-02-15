@@ -6,9 +6,15 @@
     <title>Social Intelligence & Analytics | Mirsad Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } } } }
+            theme: {
+                extend: {
+                    colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] }
+                }
+            }
         }
     </script>
     <style>
@@ -16,53 +22,52 @@
         .sentiment-bar { animation: growUp 2s ease-out forwards; transform-origin: bottom; transform: scaleY(0); }
         @keyframes grow { to { transform: scaleX(1); } }
         @keyframes growUp { to { transform: scaleY(1); } }
-        .pulse-live { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     </style>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-white text-gray-900 selection:bg-mirsad-blue selection:text-white">
 
-    <nav class="p-6 bg-mirsad-navy text-white flex justify-between items-center border-b border-white/5">
-        <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
-        <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-mirsad-navy transition">← Back to Overview</a>
+    <nav class="fixed top-0 w-full z-50 bg-mirsad-navy/95 backdrop-blur-md h-20 border-b border-white/5">
+        <div class="container mx-auto px-6 h-full flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="flex items-center">
+                <div class="text-white font-display font-bold text-xl tracking-tighter uppercase">
+                    MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="social-intelligence.html" class="text-[10px] font-bold text-mirsad-blue uppercase tracking-widest">Social</a>
+                <a href="reputation-defense.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Reputation</a>
+                <a href="ai-automation.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">AI Automation</a>
+            </div>
+            <a href="index.html#contact" class="bg-mirsad-blue text-white text-[10px] font-bold py-2.5 px-6 rounded-full hover:bg-white hover:text-mirsad-navy transition duration-300 uppercase tracking-widest">
+                Alignment Session
+            </a>
+        </div>
     </nav>
 
-    <header class="py-24 bg-mirsad-navy text-white">
-        <div class="container mx-auto px-6">
+    <header class="pt-48 pb-24 bg-mirsad-navy text-white">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="max-w-4xl">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-8">
                     <i class="fas fa-satellite-dish mr-2"></i> Phase 01: The Radar
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                    Social Intelligence <br> & Analytics
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-8 leading-[1.1] text-left">
+                    Social Intelligence <br>& Analytics
                 </h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed text-left font-light italic">
-                    The Radar Protocol: Transforming millions of real-time conversations into strategic dominance through dialect-aware AI. [cite: 37, 43, 85-86]
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed font-light text-left italic">
+                    Transforming millions of real-time conversations into strategic dominance. We capture emerging trends and reputational threats before they become public crises.
                 </p>
             </div>
         </div>
     </header>
 
     <section class="py-24 bg-mirsad-light">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto bg-white rounded-[40px] shadow-2xl border border-gray-200 overflow-hidden">
-                <div class="p-8 md:p-12">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-mirsad-navy">Intelligence Suite Console</h2>
-                            <p class="text-xs text-gray-400 mt-1 uppercase tracking-widest font-bold">Consolidated Metric Dashboard</p>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <span class="flex items-center text-[10px] font-mono font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                                <i class="fas fa-circle pulse-live text-[6px] mr-2"></i> LIVE_FEED_ACTIVE
-                            </span>
-                        </div>
-                    </div>
-
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="bg-white rounded-[40px] shadow-2xl border border-gray-200 overflow-hidden">
+                <div class="p-8 md:p-16">
                     <div class="grid lg:grid-cols-2 gap-16">
                         
                         <div>
-                            <h4 class="text-[10px] font-bold text-gray-400 uppercase mb-8 tracking-[0.2em]">Regional Sentiment Profile</h4>
+                            <h4 class="text-[10px] font-bold text-gray-400 uppercase mb-12 tracking-[0.2em]">Live Sentiment Profile</h4>
                             <div class="flex items-end justify-between h-48 px-4">
                                 <div class="flex flex-col items-center w-1/3">
                                     <div class="bg-green-500 w-12 md:w-16 sentiment-bar h-40 rounded-t-xl"></div>
@@ -80,29 +85,24 @@
                         </div>
 
                         <div class="flex flex-col justify-center">
-                            <h4 class="text-[10px] font-bold text-gray-400 uppercase mb-8 tracking-[0.2em]">Share of Voice (SoV)</h4>
-                            <div class="space-y-8">
+                            <h4 class="text-[10px] font-bold text-gray-400 uppercase mb-12 tracking-[0.2em]">Share of Voice (SoV)</h4>
+                            <div class="space-y-10">
                                 <div>
                                     <div class="flex justify-between text-xs font-bold mb-3">
-                                        <span class="text-mirsad-navy">Mirsad Protected Brand</span>
+                                        <span class="text-mirsad-navy uppercase tracking-tighter font-display">Your Brand</span>
                                         <span>68%</span>
                                     </div>
-                                    <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+                                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
                                         <div class="bg-mirsad-navy h-full sov-bar" style="width: 68%;"></div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="flex justify-between text-xs font-bold mb-3">
-                                        <span class="text-gray-400">Industry Average</span>
-                                        <span>24%</span>
+                                        <span class="text-gray-400 uppercase tracking-tighter font-display">Competitors</span>
+                                        <span>32%</span>
                                     </div>
-                                    <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
-                                        <div class="bg-mirsad-blue h-full sov-bar" style="width: 24%; animation-delay: 0.3s;"></div>
-                                    </div>
-                                </div>
-                                <div class="pt-4">
-                                    <div class="inline-flex items-center text-[10px] text-mirsad-blue font-bold uppercase tracking-widest border-t border-gray-100 pt-4">
-                                        <i class="fas fa-microchip mr-2"></i> Real-time Competitive Benchmarking
+                                    <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                        <div class="bg-mirsad-blue h-full sov-bar" style="width: 32%; animation-delay: 0.3s;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -115,48 +115,41 @@
     </section>
 
     <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-                
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
                 <div class="group">
-                    <div class="text-mirsad-blue text-xs font-bold mb-4">01 // BRAND MONITORING</div>
-                    <h3 class="font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Continuous Vigilance</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">24/7 scanning of every mention, rumor, and news story across the global web to ensure narrative integrity. [cite: 23, 28, 43]</p>
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">01 // Brand Monitoring</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">24/7 Digital Vigilance</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Real-time tracking of every mention and rumor across the global web to secure narrative integrity.</p>
                 </div>
-
                 <div class="group">
-                    <div class="text-mirsad-blue text-xs font-bold mb-4">02 // COMPETITIVE ANALYSIS</div>
-                    <h3 class="font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Strategic Benchmarking</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">Deep-dive comparison against regional peers to identify market gaps and white space opportunities. [cite: 26, 31, 66]</p>
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">02 // Competitive Analysis</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Strategic Benchmarking</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Comparing performance against regional peers to uncover white space and market gaps.</p>
                 </div>
-
                 <div class="group">
-                    <div class="text-mirsad-blue text-xs font-bold mb-4">03 // MARKET RESEARCH</div>
-                    <h3 class="font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Consumer Mapping</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">Decoding consumer behavior and cultural insights to validate campaigns before they reach the market. [cite: 71-73]</p>
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">03 // Market Research</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Consumer Insights</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Deep-dive analysis into consumer behavior and cultural nuances to validate brand strategy.</p>
                 </div>
-
                 <div class="group">
-                    <div class="text-mirsad-blue text-xs font-bold mb-4">04 // CAMPAIGN TRACKING</div>
-                    <h3 class="font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Deployment Metrics</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">Real-time performance streams that strengthen pitches and provide executive-level campaign validation. [cite: 15, 60]</p>
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">04 // Campaign Tracking</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Performance Metrics</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Continuous data streams to validate marketing spend and strengthen executive pitches.</p>
                 </div>
-
                 <div class="group">
-                    <div class="text-mirsad-blue text-xs font-bold mb-4">05 // TREND FORECASTING</div>
-                    <h3 class="font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Predictive Intelligence</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">Detecting regional viral trends to shift your brand from reactive management to market leadership. [cite: 62, 75]</p>
+                    <div class="text-mirsad-blue text-[10px] font-bold mb-4 tracking-widest uppercase">05 // Trend Forecasting</div>
+                    <h3 class="font-display font-bold text-xl text-mirsad-navy mb-4 group-hover:text-mirsad-blue transition">Predictive Intelligence</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">Detecting regional viral trends early to shift your brand from reactive to market leadership.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-mirsad-navy text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-2xl font-bold text-white mb-8 italic">Move from Capability to Calibration.</h2>
-            <a href="index.html#contact" class="bg-mirsad-blue text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Secure Alignment Session</a>
-            <p class="text-[9px] text-gray-500 mt-16 uppercase tracking-[0.3em] font-mono">© 2025 Mirsad Insights // Intellectual Property Enforced by Alhababi Law Firm.</p>
+    <footer class="py-20 bg-mirsad-navy text-center border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <a href="index.html#contact" class="bg-mirsad-blue text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-mirsad-navy transition duration-300 inline-block shadow-lg uppercase tracking-widest text-[10px]">Secure Alignment Session</a>
+            <p class="text-[9px] text-gray-500 mt-16 uppercase tracking-[0.3em] font-mono">© 2025 Mirsad Insights // Strategic Communication Powered by Intelligence.</p>
         </div>
     </footer>
 
