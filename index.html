@@ -20,7 +20,11 @@
     <style>
         .radar-ping { animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
         @keyframes ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
-        .hero-gradient { background: radial-gradient(circle at top right, rgba(92, 135, 164, 0.15), transparent); }
+        .hero-gradient { background: radial-gradient(circle at top right, rgba(92, 135, 164, 0.1), transparent); }
+        .gauge-arrow { transform-origin: bottom center; animation: gauge-swing 3s ease-in-out infinite alternate; }
+        @keyframes gauge-swing { from { transform: rotate(-45deg); } to { transform: rotate(65deg); } }
+        .sov-bar { animation: grow 2s ease-out forwards; transform-origin: left; transform: scaleX(0); }
+        @keyframes grow { to { transform: scaleX(1); } }
     </style>
 </head>
 <body class="bg-white text-gray-900 selection:bg-mirsad-blue selection:text-white">
@@ -32,10 +36,10 @@
                     MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
                 </div>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="social-intelligence.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Social</a>
-                <a href="reputation-defense.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">Reputation</a>
-                <a href="ai-automation.html" class="text-[10px] font-bold text-white uppercase tracking-widest hover:text-mirsad-blue transition">AI Automation</a>
+            <div class="hidden md:flex items-center space-x-8 text-white text-[10px] font-bold uppercase tracking-widest">
+                <a href="social-intelligence.html" class="hover:text-mirsad-blue transition">Social</a>
+                <a href="reputation-defense.html" class="hover:text-mirsad-blue transition">Reputation</a>
+                <a href="ai-automation.html" class="hover:text-mirsad-blue transition">AI Automation</a>
             </div>
             <a href="#contact" class="bg-mirsad-blue text-white text-[10px] font-bold py-2.5 px-6 rounded-full hover:bg-white hover:text-mirsad-navy transition duration-300 uppercase tracking-widest">
                 Alignment Session
@@ -45,103 +49,127 @@
 
     <header class="pt-48 pb-32 bg-mirsad-navy text-white relative overflow-hidden hero-gradient">
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
-            <div class="max-w-4xl">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-8">
-                    <span class="relative flex h-2 w-2 mr-2">
-                        <span class="radar-ping absolute inline-flex h-full w-full rounded-full bg-mirsad-blue opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-mirsad-blue"></span>
-                    </span>
-                    Live Intelligence Protocol Active
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-mirsad-blue/10 border border-mirsad-blue/20 text-mirsad-blue text-[10px] font-bold uppercase tracking-widest mb-8">
+                        <span class="relative flex h-2 w-2 mr-2">
+                            <span class="radar-ping absolute inline-flex h-full w-full rounded-full bg-mirsad-blue opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-mirsad-blue"></span>
+                        </span>
+                        Live Intelligence Protocol Active
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight">
+                        Clarity From <br><span class="text-mirsad-blue italic">Complexity.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-400 max-w-lg leading-relaxed font-light mb-12">
+                        A dual-engine intelligence firm combining enterprise technology with expert human strategy.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="#services" class="bg-mirsad-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-mirsad-navy transition duration-300 shadow-xl text-center">
+                            Explore the Suite
+                        </a>
+                        <a href="#contact" class="border border-white/20 text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-mirsad-navy transition duration-300 text-center">
+                            Book Briefing
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-5xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight">
-                    Clarity From <br><span class="text-mirsad-blue italic">Complexity.</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-light mb-12">
-                    A dual-engine intelligence firm combining enterprise technology with expert human strategy to act as the guardians of your digital reputation. [cite: 8]
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#services" class="bg-mirsad-blue text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-mirsad-navy transition duration-300 shadow-xl">
-                        Explore the Suite
-                    </a>
-                    <a href="#contact" class="border border-white/20 text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-mirsad-navy transition duration-300">
-                        Book Briefing
-                    </a>
+
+                <div class="hidden lg:block relative">
+                    <div class="bg-white rounded-[40px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-white/10 p-8 text-mirsad-navy relative overflow-hidden">
+                        
+                        <div class="mb-10">
+                            <h4 class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-6">Sentiment Analysis / BHI</h4>
+                            <div class="flex items-center justify-between gap-8">
+                                <div class="relative w-40 h-20 overflow-hidden">
+                                    <div class="absolute top-0 w-40 h-40 border-[12px] border-gray-100 rounded-full"></div>
+                                    <div class="absolute top-0 w-40 h-40 border-[12px] border-transparent border-t-green-500 border-r-green-500 rounded-full transform -rotate-45"></div>
+                                    <div class="absolute bottom-0 left-1/2 w-1 h-14 bg-mirsad-navy gauge-arrow -translate-x-1/2 rounded-full"></div>
+                                    <div class="text-center absolute bottom-0 w-full font-display font-bold text-2xl">0.99</div>
+                                </div>
+                                <div class="flex-grow flex items-end justify-between h-20 px-2">
+                                    <div class="flex flex-col items-center"><div class="bg-green-500 w-4 h-16 rounded-t"></div><span class="text-[7px] mt-1 font-bold">Positive</span></div>
+                                    <div class="flex flex-col items-center"><div class="bg-gray-200 w-4 h-10 rounded-t"></div><span class="text-[7px] mt-1 font-bold">Neutral</span></div>
+                                    <div class="flex flex-col items-center"><div class="bg-red-400 w-4 h-6 rounded-t"></div><span class="text-[7px] mt-1 font-bold">Negative</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-gray-100">
+                            <h4 class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-6">Share of Voice (SoV)</h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-[10px] font-bold mb-2"><span>Mirsad Protected Brand</span><span>68%</span></div>
+                                    <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-mirsad-navy h-full sov-bar" style="width: 68%;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-[10px] font-bold mb-2 text-gray-400"><span>Industry Competitors</span><span>32%</span></div>
+                                    <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-mirsad-blue h-full sov-bar" style="width: 32%; animation-delay: 0.5s;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-4 right-8">
+                            <span class="text-[8px] font-mono text-green-600 bg-green-50 px-2 py-1 rounded-full border border-green-100 font-bold">LIVE_DATA_FEED</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </header>
 
     <section id="services" class="py-32 bg-white">
         <div class="container mx-auto px-6 max-w-7xl">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div class="max-w-2xl">
-                    <h2 class="text-xs font-bold text-mirsad-blue uppercase tracking-[0.2em] mb-4">The Complete Ecosystem</h2>
-                    <p class="text-3xl md:text-5xl font-display font-bold text-mirsad-navy leading-tight">Technology detects volume. <br> Humans decode nuance.</p>
-                </div>
+            <div class="max-w-2xl mb-20">
+                <h2 class="text-xs font-bold text-mirsad-blue uppercase tracking-[0.2em] mb-4">The Complete Ecosystem</h2>
+                <p class="text-3xl md:text-5xl font-display font-bold text-mirsad-navy leading-tight">Technology detects volume. <br> Humans decode nuance.</p>
             </div>
-
             <div class="grid lg:grid-cols-3 gap-8">
                 <a href="social-intelligence.html" class="group bg-mirsad-light p-10 rounded-[40px] hover:bg-mirsad-navy transition-all duration-500 hover:-translate-y-4">
-                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition">
-                        <i class="fas fa-satellite-dish text-2xl"></i>
-                    </div>
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition"><i class="fas fa-satellite-dish text-2xl"></i></div>
                     <h3 class="text-2xl font-display font-bold mb-4 group-hover:text-white transition">Social Intelligence</h3>
-                    <p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">The Radar: 24/7 scanning of millions of real-time conversations to identify market gaps and threats. [cite: 8-9]</p>
+                    [cite_start]<p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">24/7 scanning of conversations to identify market gaps and threats. [cite: 8-9]</p>
                     <span class="text-mirsad-blue font-bold text-[10px] uppercase tracking-widest group-hover:text-white transition">View Radar Protocol →</span>
                 </a>
-
                 <a href="reputation-defense.html" class="group bg-mirsad-light p-10 rounded-[40px] hover:bg-mirsad-navy transition-all duration-500 hover:-translate-y-4">
-                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition">
-                        <i class="fas fa-shield-halved text-2xl"></i>
-                    </div>
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition"><i class="fas fa-shield-halved text-2xl"></i></div>
                     <h3 class="text-2xl font-display font-bold mb-4 group-hover:text-white transition">Reputation Defense</h3>
-                    <p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">Proactive protection: Neutralizing negative sentiment and securing digital brand health scores. [cite: 11-12]</p>
+                    [cite_start]<p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">Neutralizing negative sentiment and securing digital brand health scores. [cite: 11-12]</p>
                     <span class="text-mirsad-blue font-bold text-[10px] uppercase tracking-widest group-hover:text-white transition">View Defense Protocol →</span>
                 </a>
-
                 <a href="ai-automation.html" class="group bg-mirsad-light p-10 rounded-[40px] hover:bg-mirsad-navy transition-all duration-500 hover:-translate-y-4">
-                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition">
-                        <i class="fas fa-robot text-2xl"></i>
-                    </div>
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mirsad-navy mb-10 group-hover:bg-mirsad-blue group-hover:text-white transition"><i class="fas fa-robot text-2xl"></i></div>
                     <h3 class="text-2xl font-display font-bold mb-4 group-hover:text-white transition">AI Automation</h3>
-                    <p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">Scalable Defense: Deploying NLU infrastructure as a digital first-responder layer. [cite: 79-80]</p>
+                    [cite_start]<p class="text-gray-500 group-hover:text-gray-400 font-light mb-8 leading-relaxed">Deploying NLU infrastructure as a digital first-responder layer. [cite: 79-80]</p>
                     <span class="text-mirsad-blue font-bold text-[10px] uppercase tracking-widest group-hover:text-white transition">View AI Protocol →</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-mirsad-navy relative overflow-hidden">
-        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+    <section id="contact" class="py-32 bg-mirsad-navy text-white">
+        <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-8">From Capability to <span class="text-mirsad-blue">Calibration.</span></h2>
-                    <p class="text-xl text-gray-400 font-light mb-10 leading-relaxed">
-                        To ensure this intelligence system effectively serves your specific mandates, we invite you to a 30-Minute Alignment Session with our Lead Strategist. 
-                    </p>
-                    <ul class="space-y-6">
-                        <li class="flex items-center text-white font-bold text-sm tracking-widest uppercase">
-                            <i class="fas fa-check-circle text-mirsad-blue mr-4 text-xl"></i> Align on Objectives
-                        </li>
-                        <li class="flex items-center text-white font-bold text-sm tracking-widest uppercase">
-                            <i class="fas fa-check-circle text-mirsad-blue mr-4 text-xl"></i> Live Platform Demo
-                        </li>
-                    </ul>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">Alignment <span class="text-mirsad-blue">Session.</span></h2>
+                    [cite_start]<p class="text-xl text-gray-400 font-light mb-10 leading-relaxed">30-minute strategic session to map our intelligence capabilities to your mandates. [cite: 92-93]</p>
                 </div>
-
-                <div class="bg-white p-10 md:p-16 rounded-[40px] shadow-2xl">
+                <div class="bg-white p-10 md:p-16 rounded-[40px] shadow-2xl text-mirsad-navy">
                     <form action="https://formspree.io/f/mgvgyyjb" method="POST" class="space-y-8">
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Full Name</label>
-                            <input type="text" name="name" required class="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-mirsad-blue transition font-display text-lg" placeholder="e.g. Ali Hassan">
+                            <input type="text" name="name" required class="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-mirsad-blue font-display text-lg" placeholder="Ali Hassan">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Business Email</label>
-                            <input type="email" name="email" required class="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-mirsad-blue transition font-display text-lg" placeholder="name@agency.com">
+                            <input type="email" name="email" required class="w-full border-b border-gray-200 py-4 focus:outline-none focus:border-mirsad-blue font-display text-lg" placeholder="name@agency.com">
                         </div>
-                        <button type="submit" class="w-full bg-mirsad-navy text-white font-bold py-6 rounded-full hover:bg-mirsad-blue transition duration-500 uppercase tracking-widest text-[10px]">
-                            Secure Alignment Session
-                        </button>
+                        <button type="submit" class="w-full bg-mirsad-navy text-white font-bold py-6 rounded-full hover:bg-mirsad-blue transition duration-500 uppercase tracking-widest text-[10px]">Secure Alignment Session</button>
                     </form>
                 </div>
             </div>
@@ -150,12 +178,8 @@
 
     <footer class="py-20 bg-mirsad-navy text-center border-t border-white/5">
         <div class="container mx-auto px-6 max-w-7xl">
-            <div class="text-white font-display font-bold text-xl tracking-tighter uppercase mb-8">
-                MIRSAD <span class="text-mirsad-blue">INSIGHTS</span>
-            </div>
-            <p class="text-[9px] text-gray-500 uppercase tracking-[0.4em] font-mono">
-                © 2025 Mirsad Insights // Intellectual Property Enforced by Alhababi Law Firm.
-            </p>
+            <div class="text-white font-display font-bold text-xl tracking-tighter uppercase mb-8">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></div>
+            <p class="text-[9px] text-gray-500 uppercase tracking-[0.4em] font-mono">© 2025 Mirsad Insights // Intellectual Property Enforced by Alhababi Law Firm.</p>
         </div>
     </footer>
 
