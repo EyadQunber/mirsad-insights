@@ -1,63 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Intelligence & Analytics | Mirsad Insights</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: { extend: { colors: { mirsad: { navy: '#15293E', blue: '#5C87A4', light: '#F3F4F6' } } } }
-        }
-    </script>
-</head>
-<body class="bg-white text-gray-900">
-    <nav class="p-6 bg-mirsad-navy text-white flex justify-between items-center">
-        <a href="index.html" class="font-bold text-xl tracking-tighter">MIRSAD <span class="text-mirsad-blue">INSIGHTS</span></a>
-        <a href="index.html" class="text-xs uppercase tracking-widest hover:text-mirsad-blue transition">← Back to Overview</a>
-    </nav>
-
-    <header class="py-20 bg-mirsad-navy text-white overflow-hidden relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-5xl font-bold mb-6">Social Intelligence <br>& Analytics</h1>
-            <p class="text-xl text-gray-400 max-w-2xl leading-relaxed">The Radar: 24/7 AI-scanning of the global web for brand mentions, market trends, and emerging opportunities.</p>
-        </div>
-    </header>
-
-    <section class="py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div class="space-y-12">
-                <div class="border-l-4 border-mirsad-blue pl-6">
-                    <h3 class="text-2xl font-bold mb-2">Market Research & Insights</h3>
-                    <p class="text-gray-600">Deep-dive analysis into consumer behavior and market shifts before they become mainstream.</p>
-                </div>
-                <div class="border-l-4 border-mirsad-blue pl-6">
-                    <h3 class="text-2xl font-bold mb-2">Social & Media Monitoring</h3>
-                    <p class="text-gray-600">Real-time tracking of every mention, rumor, and news story across the digital landscape.</p>
-                </div>
-                <div class="border-l-4 border-mirsad-blue pl-6">
-                    <h3 class="text-2xl font-bold mb-2">Competitive Benchmarking</h3>
-                    <p class="text-gray-600">Comparing your digital footprint against regional peers to identify strategic gaps.</p>
-                </div>
+<section class="py-24 bg-mirsad-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-mirsad-blue uppercase tracking-widest mb-4">Inside the Suite</h2>
+                <p class="text-3xl font-display font-bold text-mirsad-navy">Turn Raw Conversations into Executive Intelligence.</p>
             </div>
-            <div class="space-y-12">
-                <div class="border-l-4 border-mirsad-blue pl-6">
-                    <h3 class="text-2xl font-bold mb-2">Campaign Tracking</h3>
-                    <p class="text-gray-600">Live performance metrics for your PR and marketing pushes to ensure maximum ROI.</p>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-4 rounded-2xl shadow-xl border border-gray-200">
+                    <div class="flex justify-between items-center mb-4 px-2">
+                        <span class="text-[10px] font-mono text-gray-400">RADAR_FEED // LIVE_MENTIONS</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                        </div>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/EyadQunber/mirsad-insights/main/mentions_preview.jpg" class="rounded-lg border border-gray-100" alt="Mirsad Mentions Feed">
+                    <p class="mt-4 text-xs text-gray-500 italic px-2">24/7 AI-scanning of global conversations across Facebook, X, and Web news.</p>
                 </div>
-                <div class="border-l-4 border-mirsad-blue pl-6">
-                    <h3 class="text-2xl font-bold mb-2">Influencer Identification</h3>
-                    <p class="text-gray-600">Locating the genuine voices that move the needle in your specific industry and region.</p>
+
+                <div class="bg-white p-4 rounded-2xl shadow-xl border border-gray-200">
+                    <div class="flex justify-between items-center mb-4 px-2">
+                        <span class="text-[10px] font-mono text-gray-400">ANALYTICS_SUITE // GEOLOCATION</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/EyadQunber/mirsad-insights/main/analysis_preview.jpg" class="rounded-lg border border-gray-100" alt="Mirsad Geolocation Mapping">
+                    <p class="mt-4 text-xs text-gray-500 italic px-2">Mapping regional sentiment to identify market gaps and audience influencers.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="bg-mirsad-light py-20 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready for a Market Briefing?</h2>
-        <p class="text-gray-600 mb-8">Let us show you what the market is saying about you right now.</p>
-        <a href="index.html#contact" class="bg-mirsad-navy text-white px-10 py-4 rounded font-bold hover:bg-mirsad-blue transition">Secure Alignment Session</a>
-    </section>
-</body>
-</html>
